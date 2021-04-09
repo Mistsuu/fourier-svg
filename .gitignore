@@ -1,0 +1,4 @@
+*.o
+*/Source
+*/output.txt
+svg/oops.svg

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   width="612px"
+   height="792px"
+   viewBox="0 0 612 792"
+   enable-background="new 0 0 612 792"
+   xml:space="preserve"
+   sodipodi:docname="batman-11.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"><metadata
+   id="metadata13"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
+   id="defs11" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1600"
+   inkscape:window-height="877"
+   id="namedview9"
+   showgrid="false"
+   inkscape:zoom="0.2979798"
+   inkscape:cx="306"
+   inkscape:cy="396"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Layer_1" />
+<g
+   id="g6"
+   transform="matrix(3.141462,0,0,3.3329749,-652.27745,-1065.6891)">
+	<polygon
+   points="401.756,492.756 209,492.756 209,300 401.756,300 "
+   id="polygon2"
+   style="clip-rule:evenodd;fill:#ffffff;fill-rule:evenodd" />
+	<path
+   d="m 305.214,374.779 c 2.463,0 3.45,0.493 3.45,0.493 l 1.478,-6.241 c 0,0 1.15,4.763 1.643,9.034 0.493,4.271 8.048,1.479 14.454,0.164 6.405,-1.314 7.72,-11.662 7.72,-11.662 h 59.294 c 0,0 -35.807,10.841 -26.772,34.656 0,0 -52.889,-8.048 -61.101,24.967 h -10e-4 c -8.212,-33.015 -61.101,-24.967 -61.101,-24.967 9.034,-23.815 -26.772,-34.656 -26.772,-34.656 H 276.8 c 0,0 1.314,10.348 7.719,11.662 6.406,1.314 13.962,4.106 14.454,-0.164 0.493,-4.271 1.643,-9.034 1.643,-9.034 l 1.479,6.241 c 0,0 0.985,-0.493 3.449,-0.493 z"
+   id="path4"
+   inkscape:connector-curvature="0" />
+</g>
+</svg>
