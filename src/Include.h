@@ -25,7 +25,7 @@
 #define MIN_FREQ -50
 #define MAX_FREQ 50
 #define WIDTH  1600
-#define HEIGHT 600
+#define HEIGHT 800
 #define STORAGE_THRESHOLD 1000
 //#define SVG_SIGNATURE "[] Verified by Mistsu"
 //#define DEBUG

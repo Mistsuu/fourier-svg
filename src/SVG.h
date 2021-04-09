@@ -86,7 +86,7 @@ string get_d_param_from_path_tag_of_a_svg_file(string svg_filename)
 // Converts string of d parameter into SVGPath variables, with absolute coordinates
 // < Note > : I have not done anything for 'a' and 'A' commands.
 ///////////////////////////////////////////////////////////////////////////////////////
-SVGPath from_string_to_SVGPath(string input, float magnificent_coefficent, int offX, int offY)
+SVGPath from_string_to_SVGPath(string input, float magnificent_coefficent)
 {
 	cout << "[] Converting the d_param into SVGPath..." << endl;
 	SVGPath path;
@@ -126,7 +126,7 @@ SVGPath from_string_to_SVGPath(string input, float magnificent_coefficent, int o
 				x = stof(token);
 				if (cmd == 'h')  x += xPrev;    // Cause those commands with lowercase are for relative position
 				                 xPrev = x;     // For sets of H commands
-				path[path.size() - 1].points.push_back(Vector2f(x * magnificent_coefficent + offX, y * magnificent_coefficent + offY));   // Push back new data point
+				path[path.size() - 1].points.push_back(Vector2f(x * magnificent_coefficent, y * magnificent_coefficent));   // Push back new data point
 				token = "";
 				continue;
 			}
@@ -138,7 +138,7 @@ SVGPath from_string_to_SVGPath(string input, float magnificent_coefficent, int o
 				y = stof(token);
 				if (cmd == 'v')  y += yPrev;    // Cause those commands with lowercase are for relative position
 								 yPrev = y;     // For sets of H commands
-				path[path.size() - 1].points.push_back(Vector2f(x * magnificent_coefficent + offX, y * magnificent_coefficent + offY));   // Push back new data point
+				path[path.size() - 1].points.push_back(Vector2f(x * magnificent_coefficent, y * magnificent_coefficent));   // Push back new data point
 				token = "";
 				continue;
 			}
@@ -160,7 +160,7 @@ SVGPath from_string_to_SVGPath(string input, float magnificent_coefficent, int o
 				y = stof(token); 
 				if (cmd >= 'a' && cmd <= 'z')  x += xPrev, y += yPrev;    // Cause those commands with lowercase are for relative position
 				if (cmd == 'l')                xPrev = x, yPrev = y;      // For sets of l commands
-				path[path.size() - 1].points.push_back(Vector2f(x * magnificent_coefficent + offX, y * magnificent_coefficent + offY));   // Push back new data point
+				path[path.size() - 1].points.push_back(Vector2f(x * magnificent_coefficent, y * magnificent_coefficent));   // Push back new data point
 			}
 		
 			paramCount++;

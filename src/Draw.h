@@ -78,10 +78,10 @@ void UpdatingVertices(vector<Vertex>& curves, vector<Vertex>& vertices, vector<C
 void initDrawing(string filename, Polygon& coors, map<int, Complex>& fourier_coefficents, vector<Arm>& arms, vector<Vertex>& vertices, vector<CircleShape>& circles, float zoom, int offX, int offY)
 {
 	string  d_param   = get_d_param_from_path_tag_of_a_svg_file(filename);
-	SVGPath svg_path  = from_string_to_SVGPath(d_param, zoom, offX, offY);
+	SVGPath svg_path  = from_string_to_SVGPath(d_param, zoom);
 	coors             = convert_SVGPath_to_list_of_coordinates(svg_path);
 
-	dft(coors, fourier_coefficents);
+	dft(coors, fourier_coefficents, offX, offY);
 	make_arms_from_fourier_coefficents(fourier_coefficents, arms, vertices, circles);
 }
 
