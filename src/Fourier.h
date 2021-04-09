@@ -9,7 +9,7 @@
 using namespace std;
 using namespace sf;
 
-void dft(Polygon fig, map<int, Complex>& coefficient, int offX, int offY)
+void dft(Polygon fig, map<int, Complex>& coefficient)
 {
 	printf("[] Calculating coefficient for the Fourier Transform algorithm... Doing coefficent ");
 	for (int co = MIN_FREQ; co <= MAX_FREQ; co++) {
@@ -25,5 +25,4 @@ void dft(Polygon fig, map<int, Complex>& coefficient, int offX, int offY)
 		printf("\b\b\b\b\b\b\b\b\b");
 	}
 	printf("\b... Finished.\n");
-	coefficient[0] = Complex(WIDTH/2 + offX, HEIGHT/2 + offY); 
 }

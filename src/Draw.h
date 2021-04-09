@@ -81,7 +81,8 @@ void initDrawing(string filename, Polygon& coors, map<int, Complex>& fourier_coe
 	SVGPath svg_path  = from_string_to_SVGPath(d_param, zoom);
 	coors             = convert_SVGPath_to_list_of_coordinates(svg_path);
 
-	dft(coors, fourier_coefficents, offX, offY);
+	dft(coors, fourier_coefficents);
+	fourier_coefficents[0] = Complex(WIDTH/2 + offX, HEIGHT/2 + offY); 
 	make_arms_from_fourier_coefficents(fourier_coefficents, arms, vertices, circles);
 }
 
