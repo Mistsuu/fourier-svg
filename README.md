@@ -2,3 +2,5 @@
 
 ### Introduction
 Written in C++ using SFML library. Automatically detect and create a Fourier Series visualization of an SVG file.
+
+![alt text](img/or.gif)
