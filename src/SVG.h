@@ -44,13 +44,21 @@ string get_d_param_from_path_tag_of_a_svg_file(string svg_filename)
 	while (getline(svgfile, line)) {
 		switch (CURRENT_TASK) {
 		case FIND_PATH_TAG:
+			// Find any string that matches "<path"
 			if (line.find("<path") == -1) break;
 			CURRENT_TASK = FIND_D_PARAM;
 
 		case FIND_D_PARAM:
+			// Find any string that matches "d=\"
 			d_pos = line.find("d=\"");
-			if (d_pos == -1)                          break; 
-			if (d_pos != 0 && line[d_pos - 1] == 'i') break; // Really don't want to be confused with the id="" parameter
+			if (d_pos == -1) 
+				break;
+
+			// ... but not any that matches "#d=\" (# means any characters)
+			while (d_pos != -1 && d_pos != 0 && line[d_pos - 1] != ' ') {
+				line = line.substr(d_pos + 3);
+				d_pos = line.find("d=\"");
+			}
 
 			line = line.substr(d_pos + 3);
 			CURRENT_TASK = FIND_ENDING_QUOTATION;
@@ -201,7 +209,7 @@ Polygon convert_SVGPath_to_list_of_coordinates(SVGPath path)
 
 	const float _dt = 0.01;
 	int i, j;
-	float t;
+	float _t;
 
 	for (i = 0; i < path.size(); ++i) {
 		switch (path[i].cmd) {
@@ -224,8 +232,8 @@ Polygon convert_SVGPath_to_list_of_coordinates(SVGPath path)
 			for (; j < path[i].points.size(); ++j) {
 				endPoint = path[i].points[j];
 
-				for (t = 0; t < 1; t += dt) 
-					image.push_back(Vertex(Vector2f((1 - t) * currPoint + t * endPoint)));
+				for (_t = 0; _t < 1; _t += _dt) 
+					image.push_back(Vertex(Vector2f((1 - _t) * currPoint + _t * endPoint)));
 
 				currPoint = endPoint;
 			}
@@ -237,8 +245,8 @@ Polygon convert_SVGPath_to_list_of_coordinates(SVGPath path)
 			bezierPoint1 = path[i].points[0];
 			endPoint     = path[i].points[1];
 
-			for (t = 0; t < 1; t += dt) 
-				image.push_back(Vertex(Vector2f(sqr(1-t)* currPoint + 2*(1-t)*t* bezierPoint1 + sqr(t)* endPoint)));
+			for (_t = 0; _t < 1; _t += _dt) 
+				image.push_back(Vertex(Vector2f(sqr(1-_t)* currPoint + 2*(1-_t)*_t* bezierPoint1 + sqr(_t)* endPoint)));
 
 			currPoint = endPoint;
 			break;
@@ -250,8 +258,8 @@ Polygon convert_SVGPath_to_list_of_coordinates(SVGPath path)
 			bezierPoint2 = path[i].points[1];
 			endPoint     = path[i].points[2];
 
-			for (t = 0; t < 1; t += dt)
-				image.push_back(Vertex(Vector2f(cube(1-t)* currPoint + 3*sqr(1-t)*t* bezierPoint1 + 3*(1-t)*sqr(t)* bezierPoint2 + cube(t)* endPoint)));
+			for (_t = 0; _t < 1; _t += _dt)
+				image.push_back(Vertex(Vector2f(cube(1-_t)* currPoint + 3*sqr(1-_t)*_t* bezierPoint1 + 3*(1-_t)*sqr(_t)* bezierPoint2 + cube(_t)* endPoint)));
 
 			currPoint = endPoint;
 			break;
@@ -261,8 +269,8 @@ Polygon convert_SVGPath_to_list_of_coordinates(SVGPath path)
 		case 'z':
 		{
 			endPoint = path[0].points[0];
-			for (t = 0; t < 1; t += dt)
-				image.push_back(Vertex(Vector2f((1 - t) * currPoint + t * endPoint)));
+			for (_t = 0; _t < 1; _t += _dt)
+				image.push_back(Vertex(Vector2f((1 - _t) * currPoint + _t * endPoint)));
 
 			break;
 		}

@@ -21,13 +21,13 @@
 // Definition
 ////////////////////////
 #define PI 3.14159265359
-#define FRAME_RATE 120
-#define MIN_FREQ -50
-#define MAX_FREQ 50
+#define FRAME_RATE 144
+#define MIN_FREQ -200
+#define MAX_FREQ 200
 #define WIDTH  1600
 #define HEIGHT 800
-#define STORAGE_THRESHOLD 1000
+#define STORAGE_THRESHOLD 20 * FRAME_RATE
 //#define SVG_SIGNATURE "[] Verified by Mistsu"
-//#define DEBUG
+// #define DEBUG
 
-#define dt  0.002 * FRAME_RATE / 120 * (MAX_FREQ - MIN_FREQ) / 300
+#define dt  0.02 * (MAX_FREQ - MIN_FREQ) / 300 / FRAME_RATE 
