@@ -69,7 +69,7 @@ void UpdatingVertices(vector<Vertex>& curves, vector<Vertex>& vertices, vector<C
 	}
 	curves.push_back(Vertex(Vector2f(vertices[no_arms].position.x, vertices[no_arms].position.y), Color::Cyan));
 
-	if (curves.size() > STORAGE_THRESHOLD)
+	if (curves.size() > (int)STORAGE_THRESHOLD)
 		curves.erase(curves.begin());
 
     t += dt;

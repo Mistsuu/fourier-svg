@@ -22,8 +22,8 @@
 ////////////////////////
 #define PI 3.14159265359
 #define FRAME_RATE 144
-#define MIN_FREQ -200
-#define MAX_FREQ 200
+#define MIN_FREQ -300
+#define MAX_FREQ 300
 #define WIDTH  1600
 #define HEIGHT 800
 #define STORAGE_THRESHOLD 20 * FRAME_RATE
